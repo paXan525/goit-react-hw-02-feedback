@@ -11,11 +11,9 @@ class App extends Component {
     bad: 0,
   };
 
-  handleClick = e => {
+  handleClick = option => {
     this.setState(prevState => {
-      const values = e.target.value;
-
-      return { [values]: prevState[values] + 1 };
+      return { [option]: prevState[option] + 1 };
     });
   };
 
@@ -46,7 +44,7 @@ class App extends Component {
               good={good}
               neutral={neutral}
               bad={bad}
-              total={this.countTotalFeedback()}
+              total={total}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           ) : (
